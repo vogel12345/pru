@@ -1,0 +1,1303 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+body {font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0; color: #000; font-size: 17px;background-color: #fff;}
+a {text-decoration: none; color: #ee4d2d;}
+
+/* Navigation Button */
+.nav {display: flex; gap: 5px; background: #fff; width: 100%; flex-direction: row; align-items: center; justify-content: space-between; position: absolute; top: 0; left: 0; right: 0; z-index: 9999; box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;}
+.nav a {padding: 5px 15px; font-size: inherit;}
+.nav a .bi {font-size: x-large; text-align: center; margin-right: 5px; vertical-align: middle;}
+.nav a span {display: inline; color: #000;}
+.nav .n-a-4 {display: none;}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: nowrap; /* Evita que los íconos se envuelvan en múltiples líneas */
+    justify-content: center; /* Centra los íconos horizontalmente */
+  }
+  .nav a {
+    flex: 0 1 25%; /* Establece el ancho de cada ícono al 25% del contenedor */
+    max-width: 25%; /* Establece el ancho máximo para evitar que los íconos se estiren demasiado */
+  }
+  .nav a .bi {
+    font-size: large; /* Reduce el tamaño de los íconos */
+  }
+}
+
+/* Search Box */
+.search {position: absolute; top: 95px; left: 15px; right: 15px; background: #ffffff40; color: #fff; border-radius: 5px; z-index: 999; padding: 10px; vertical-align: middle; cursor: text; font-size: inherit;}
+.search:after {content: '\F52A'; font-family: Bootstrap-Icons; margin: 2px 0 0; float: right; font-weight: bold;}
+.search:hover {background: #ffffff73;}
+
+/* Carousel Image */
+.easyslider {overflow: hidden; position: relative; width: 100%; height: 300px; margin: 60px 0 20px; background: #ee4d2d;}
+.image_reel {position: absolute; top: 0; left: 0;}
+.image_reel img {float: left; width: 20%; height: 300px; overflow: hidden; object-fit: cover;}
+.paging {background: none; position: absolute; bottom: 20px; right: 15px; z-index: 100; display: none;}
+.paging a {margin: 2px; background: #fff; width: 10px; height: 10px; display: inline-block; border-radius: 50px;}
+.paging a.active {width: 20px;}
+.easytitledes {display: none; position: absolute; bottom: 0; left: 0; right: 0; z-index: 99; padding: 10px 15px; background: linear-gradient(180deg,transparent 65%,rgba(238, 69, 45, .80) 95%); width: 100%; height: 100%;}
+.easytitledes a {position: absolute; bottom: 20px; color: #fff; font-weight: bold; font-size: xx-large; max-width: 65%; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; z-index: 999;}
+
+/* Menu Button */
+.menu {max-width: 100%; overflow-y: auto; white-space: nowrap; margin: 0 0 10px; padding: 0 12px;}
+.menu .m-a {display: inline-block; padding: 10px; color: #000; margin: 0 3px; border: 1px solid #bbb; border-radius: 5px; width: 100%; max-width: 150px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; font-size: large;}
+.menu .m-a:hover {border: 1px solid #ee4d2d;}
+.menu .m-a .bi {display: block; margin-right: 10px; color: #ee4d2d; font-size: 25px; vertical-align: middle;}
+
+/* Flash Sale Box */
+.fsale {background: #ee4d2d; color: #fff; margin: 20px 0 15px; padding: 10px 0 25px;}
+.fsale h3 {margin: 5px 15px 10px; padding: 0; text-transform: uppercase; overflow: hidden;}
+.fsale h3 .bi {vertical-align: middle;}
+.fsale #date {float: right; font-size: small; font-weight: normal; text-transform: capitalize; margin: 3px 0 0;}
+.fsale .fsale-page {max-width: 100%; overflow-y: auto; white-space: nowrap; display: flex; align-items: center; gap: 10px;}
+.fsale-box {position: relative; display: inline-block; padding: 15px 10px 10px; background: #fff; color: #000; margin: 0; border-radius: 5px; width: 100%; max-width: 200px; min-width: 200px; overflow: hidden; cursor: pointer;}
+.fsale-box:first-child {margin-left: 15px;}
+.fsale-box:last-child {margin-right: 15px;}
+.fsale-box .tag {position: absolute; right: 0; z-index: 99; color: #fff; background: #ee4d2d; border-radius: 50px; font-size: inherit; padding: 5px 7px; margin: -10px 5px;}
+.fsale-box img {display: block; width: auto; height: 100px; border-radius: 5px;}
+.fsale-box .name {padding: 0; margin: 10px 0 0; font-size: inherit; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.fsale-box .price {padding: 0; margin: 0; font-size: inherit; font-weight: bold; color: #ee4d2d; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.fsale-box .link-all {width: 100%; height: 100%; display: block; font-weight: bold; text-align: center; color: #fff;}
+.fsale-box .link-all:hover {opacity: 0.7;}
+.fsale-box .link-all .bi {display: block; font-size: 60px;}
+
+/* Category Button */
+.category {max-width: 100%; overflow-y: auto; white-space: nowrap; margin: 0 0 10px; padding: 0 12px;}
+.category .c-a {display: inline-block; padding: 10px; color: #000; margin: 0 3px; border: 1px solid #bbb; border-radius: 5px; width: 100%; max-width: 150px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; font-size: large;}
+.category .c-a:hover {border: 1px solid #ee4d2d;}
+.category .c-a .bi {display: inline; margin-right: 10px; color: #ee4d2d; font-size: 25px; font-weight: bold; vertical-align: middle;}
+
+/* Product Box */
+.title {margin: 15px; text-transform: uppercase; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.title .bi {vertical-align: middle;}
+.title .link {float: right; text-transform: capitalize; font-weight: normal; font-size: small; margin: 3px 0 0; padding: 0 5px; border: 1px solid #ee452d; border-radius: 3px;}
+.product-box {display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 10px; margin: 15px 15px 20px; padding: 0;}
+.product-box .product {position: relative; background: #fff; color: #000; border: 1px solid #bbb; border-radius: 5px; padding: 15px 10px 10px; overflow: hidden;}
+.product-box .product:hover {border: 1px solid #ee4d2d;}
+.product .tag {position: absolute; right: 0; z-index: 99; color: #fff; background: #ee4d2d; border-radius: 50px; font-size: inherit; padding: 5px 7px; margin: -10px 5px;}
+.product img {display: block; width: auto; height: 100px; border-radius: 5px;}
+.product .name {padding: 0; margin: 10px 0 0; font-size: inherit; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.product .price {padding: 0; margin: 0; font-size: inherit; font-weight: bold; color: #ee4d2d; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.product .sold {padding: 0; margin: 5px 0 0; font-size: small; color: #777; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;}
+.product .sold:before {content: '\00B1'; margin-right: 3px;}
+.product .sold:after {content: '\F417'; font-family: Bootstrap-Icons; margin: 0 1px 0 5px; float: right; background: #eee; padding: 3px 2px 1px; border-radius: 50px;}
+
+
+.additional-images-container {
+    float: right;
+    margin-top: -150px; /* Ajusta el margen superior según sea necesario */
+    margin-right: 15px; /* Margen derecho para separar las imágenes del contenido principal */
+}
+
+.n-a-1 {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.n-a-1 img {
+    margin-right: 10px; /* Añade un espacio entre la imagen y el texto */
+}
+
+.fsale {
+    background: #ee4d2d;
+    color: #fff;
+    margin: 420px 0 15px;
+    padding: 10px 0px 25px;
+    overflow: hidden; /* Evitar que el contenido sobresalga del contenedor */
+  }
+
+  .fsale-box {
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente los elementos */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Ajusta según sea necesario para separar del margen inferior */
+  }
+
+  .product-box {
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente los elementos */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Ajusta según sea necesario para separar del margen inferior */
+  }
+
+.fsale h3 {
+    color: white; /* o el color que desees */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);  /* Agrega sombra al texto */
+}
+
+.additional-images-container {
+  position: absolute;
+  top: 0;
+  left: -5%;
+  transform: translateX(4%);
+  display: flex;
+  gap: 60px; /* Ajusta el espacio entre las imágenes */
+  align-items: center; /* Centra verticalmente las imágenes */
+  margin-top: 375px;
+}
+
+.additional-images-container img {
+  width: 320px; /* Ancho fijo para las imágenes */
+  height: 380px; /* Altura fija para las imágenes */
+  object-fit: cover; /* Ajusta el contenido de la imagen */
+  border: 2px solid #ee4d2d;
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+@media (max-width: 1200px) {
+  .additional-images-container {
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    margin-top: 365px; /* Ajusta el margen superior del contenedor */
+  }
+
+  .additional-images-container img {
+    width: 220px; /* Ancho fijo para las imágenes en pantallas más pequeñas */
+    height: 350px; /* Altura fija para todas las imágenes */
+    margin-top: -75px; /* Elimina el margen superior negativo */
+    margin-left: -35px;
+    margin-right: 30px;
+  }
+}
+
+.banner {
+    display: flex;
+    gap: 10px;
+    width: 400px; /* Ajusta el ancho según sea necesario */
+    height: 380px;
+    animation: scrollBanner 1s linear infinite; /* Ajusta la duración según sea necesario */
+}
+
+.banner img {
+    width: 320px; /* Ajusta el ancho según sea necesario */
+    height: 380px; /* Ajusta el alto según sea necesario */
+    object-fit: cover; /* Ajusta el contenido de la imagen */
+}
+
+@keyframes scrollBanner {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.n-a-1 span {
+    font-weight: bold;  /* Pone el texto en negrita */
+    color: #000;  /* Color del texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);  /* Agrega sombra al texto */
+}
+
+.contact {
+    background-image: url('../imagenes/Fondito.png');
+    color: #fff;
+    padding: 1px 0px;
+}
+
+.contact-content {
+  display: flex;
+  align-items: center; /* Para centrar verticalmente los elementos */
+}
+
+.logo-container {
+  flex-shrink: 0; /* Para que el contenedor de la imagen no se contraiga */
+  margin-right: 20px; /* Espaciado entre la imagen y el texto */
+}
+
+.logo-container {
+  margin-right: 225px;
+  margin-left: 30px;
+}
+
+.texto-container {
+  margin-right: 205px;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+  .contact-content {
+    flex-direction: column; /* Cambia la dirección del flexbox a column para dispositivos móviles */
+  }
+
+  .logo-container {
+    margin-bottom: 20px; /* Espaciado entre la imagen y el texto en dispositivos móviles */
+    margin-right: 0px; /* Elimina el margen derecho en dispositivos móviles */
+  }
+
+  .texto-container {
+    margin-top: -25px; /* Ajusta el margen superior para separar los iconos del texto */
+    margin-right: 0px; /* Elimina el margen derecho en dispositivos móviles */
+  }
+
+  .social-icons-container {
+    margin-top: 4px; /* Ajusta el margen superior para separar los iconos del texto */
+    text-align: center; /* Centra los iconos */
+  }
+}
+
+.container {
+  text-align: center;
+  align-items: center; /* Centra verticalmente los elementos */
+
+}
+
+.container h2{
+  text-shadow: 4px 1px 4px rgba(0, 0, 0, 0.9);  /* Agrega sombra al texto */
+}
+
+.container p{
+  text-shadow: 4px 1px 4px rgba(0, 0, 0, 0.9);  /* Agrega sombra al texto */
+}
+
+.solicitar-factura {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em; /* Ajusta el tamaño según sea necesario */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Ajusta el radio de borde según sea necesario */
+  text-shadow: 4px 1px 4px rgba(0, 0, 0, 0.5);  /* Agrega sombra al texto */
+}
+
+.solicitar-factura:active{
+  color: white; /* Cambia el color de texto al hacer clic */
+  border-bottom: 4px solid red; /* Agrega una línea inferior al hacer clic */
+}
+
+.solicitar-factura:hover{
+  color: white; /* Cambia el color de texto al pasar el ratón */
+  border-bottom: 4px solid red; /* Agrega una línea inferior al pasar el ratón */
+}
+
+.logo {
+  width: 350px; /* Ajusta el ancho del logo según sea necesario */
+  height: 105px; /* La altura se ajusta automáticamente para mantener la proporción original */
+  margin-top: 0px;
+  margin-left: -20px;
+  border-radius: 10px;
+}
+
+.social-icon {
+font-size: 3em; /* Ajusta el tamaño según sea necesario */
+margin-right: 20px; /* Ajusta el margen entre los iconos según sea necesario */
+margin-bottom: 50px; /* Agregado margen inferior para separar de la imagen de abajo */
+}
+
+ /* Estilo específico para el icono de Facebook */
+.bi-facebook {
+    color: #1877f2; /* Color de Facebook */
+    background-color: #fff; /* Relleno blanco */
+    border-radius: 50%; /* Borde redondeado para un aspecto más suave */
+    padding: 8px; /* Espaciado interno */
+  }
+  
+  /* Estilo específico para el icono de Instagram */
+  .bi-instagram {
+    color: #e4405f; /* Color de Instagram */
+    background-color: #fff; /* Relleno blanco */
+    border-radius: 50%; /* Borde redondeado para un aspecto más suave */
+    padding: 8px; /* Espaciado interno */
+  }
+  
+  /* Estilo específico para el icono de WhatsApp */
+  .bi-whatsapp {
+    color: #25d366; /* Color de WhatsApp */
+    background-color: #fff; /* Relleno blanco */
+    border-radius: 50%; /* Borde redondeado para un aspecto más suave */
+    padding: 8px; /* Espaciado interno */  }
+
+    .white-container {
+    padding: 20px; /* Espaciado interno */
+    margin-left: 950px; /* Margen a la derecha del contenedor (ajusta según sea necesario) */
+    margin-right: 35px;
+    margin-top: -125px;
+    background-color: #fc7a00;
+    border: 2px solid #ee4d2d; /* Agregado borde negro de 2 píxeles */
+
+    }
+    
+    .white-container p {
+        margin-bottom: 10px; /* Ajusta según sea necesario */
+        color: white;
+        padding: 2px 20px;
+        font-weight: bold; /* Texto en negritas */
+        font-size: 17.5px; /* Tamaño de letra en píxeles, ajusta según sea necesario */
+        text-shadow: 4px 1px 4px rgba(0, 0, 0, 0.9);  /* Agrega sombra al texto */
+
+    }
+
+    .white-container form input[type="email"] {
+        width: 250px; /* Ajusta el ancho según sea necesario */
+        padding: 10px; /* Ajusta el relleno según sea necesario */
+        border-radius: 15px; /* Hace que los bordes sean más redondos */
+        border: 4px solid #ccc; /* Agrega un borde para mayor visibilidad */
+    }
+
+    .white-container .form-container {
+        display: flex;
+        align-items: center; /* Centra verticalmente los elementos en el contenedor */
+    }
+    
+    .white-container form input {
+        padding: 10px;
+        margin-right: 10px; /* Espaciado a la derecha del input */
+    }
+    
+    .white-container form button {
+        padding: 8px 16px; /* Tamaño diferente para el botón */
+        border: none;
+        border-radius: 15px;
+        background-color: #777;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    /* Efecto de animación al pasar el ratón */
+    .white-container form button:hover {
+        background-color: #ee4d2d;
+    }
+
+    /**/
+    .white-container2 {
+        padding: 20px; /* Espaciado interno */
+        margin-right: 950px; /* Margen a la derecha del contenedor (ajusta según sea necesario) */
+        margin-left: 35px;
+        margin-top: -150px;
+        background-color: #fc7a00;
+        border: 2px solid #ee4d2d; /* Agregado borde negro de 2 píxeles */
+
+    }
+    
+    .white-container2 a {
+        margin-bottom: 10px; /* Ajusta según sea necesario */
+        color: white;
+        padding: 2px 20px;
+        font-weight: bold; /* Texto en negritas */
+        font-size: 17.5px; /* Tamaño de letra en píxeles, ajusta según sea necesario */
+        text-shadow: 4px 1px 4px rgba(0, 0, 0, 0.9);  /* Agrega sombra al texto */
+        text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+        transition: color 0.3s ease, border-bottom 0.3s ease; /* Agrega transición al color de texto y al subrayado */
+        border-bottom: 2px solid transparent; /* Línea inferior transparente por defecto */
+    }
+
+    .white-container2 a:hover {
+        color: #ccc; /* Cambia el color de texto al pasar el ratón */
+        border-bottom: 2px solid #ee4d2d; /* Agrega una línea inferior al pasar el ratón */
+    }
+    
+    .white-container2 a:active {
+        color: white; /* Cambia el color de texto al hacer clic */
+        border-bottom: 2px solid #ff6347; /* Agrega una línea inferior al hacer clic */
+    }
+
+    
+
+/* Back to Top Button */
+#myTop {display: none; position: fixed; bottom: 10px; right: 10px; z-index: 999; font-size: x-large; border: none; cursor: pointer; color: #ee4d2d; background: #fff; border-radius: 50%; padding: 5px 6px 4px; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;}
+#myTop:hover {background: #ee4d2d; color: #fff;}
+
+/* Snackbar */
+#snackbar {visibility: hidden; min-width: 200px; background-color: #333; color: #fff; text-align: center; border-radius: 5px; padding: 15px; position: fixed; z-index: 999; left: 50%; transform: translate(-50%, -50%); bottom: 30px; font-size: inherit;}
+#snackbar.show {visibility: visible; -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s; animation: fadein 0.5s, fadeout 0.5s 2.5s;}
+@-webkit-keyframes fadein {from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;}}
+@keyframes fadein {from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;}}
+@-webkit-keyframes fadeout {from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;}}
+@keyframes fadeout {from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;}}
+
+/* Modal Information */
+#button-modal {display: block; margin: 0 auto 20px; text-align: center; font-size: inherit; cursor: pointer;}
+#button-modal:hover {color: #ee4d2d;}
+.modal {display: none; position: fixed; z-index: 99999; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.2);}
+.close-modal {background: #bbb; height: 4px; width: 50px; border-radius: 10px; margin: auto; cursor: pointer;}
+.modal-content {position: absolute; bottom: 0; left: 0; right: 0; overflow: auto; text-align: left; margin: 0; padding: 15px; width: 100% auto; max-height: 200px; border-radius: 20px 20px 0 0; background: #fff; color: #000; word-break: break-all; font-size: inherit;}
+.modal-content span {display: block; font-size: small;}
+
+@media only screen and (max-width: 650px) {
+  body {font-size: 15px;  padding: 0 0 40px;}
+  .nav {gap: 20px; justify-content: center; position: fixed; top: auto; bottom: 0; left: 0; right: 0; z-index: 9999;}
+  .nav a span {display: none;}
+  .nav a .bi {margin-right: 0;}
+  .nav .n-a-1, .nav .n-a-2, .nav .n-a-3 {display: none;}
+  .nav .n-a-4 {display: inline;}
+  .search {top: 20px;}
+  .easyslider {height: 250px; margin: 0 0 20px;}
+  .image_reel img {height: 250px;}
+  .paging {bottom: 10px; right: 15px;}
+  .paging a {width: 7px; height: 7px;}
+  .easytitledes {background: linear-gradient(180deg,transparent 65%,rgba(238, 69, 45, .80) 85%);}
+  .easytitledes a {font-size: medium; -webkit-line-clamp: 2; width: 50%; bottom: 15px;}
+  .menu .m-a {max-width: 70px; font-size: small; padding: 5px 10px; border: none; vertical-align: top; padding: 0; background: none;}
+  .menu .m-a:hover {border: none; opacity: 0.7;}
+  .menu .m-a .bi {display: block; margin-right: 0; font-size: 20px;}
+  .category .c-a {max-width: 70px; font-size: medium; padding: 5px 10px;}
+  .category .c-a .bi {display: block; margin-right: 0; font-size: 20px;}
+  .fsale-box {min-width: 120px; margin: auto;}
+  .fsale{margin-top: 440px;}
+  .product-box {grid-template-columns: repeat(2, 1fr);}
+  .title .link {margin: 2px 0 0;}
+  .title {margin-top: 30px;}
+  #myTop {bottom: 50px; font-size: large;}
+  }
+
+  .fsale-box img {
+    display: block;
+    width: auto;
+    height: 100px;
+    border-radius: 5px;
+    margin: auto; /* Agrega esta línea */
+}
+
+.product-box a img {
+  display: block;
+  margin: 0 auto;
+}
+
+  
+  
+  @media only screen and (max-width: 650px) {
+    /* Restablecer la visualización de todos los elementos del Navbar */
+    .nav .n-a-2, .nav .n-a-3, .nav .n-a-4 {
+      display: inline; /* Mostrar todos los elementos */
+    }
+
+  }
+
+  /* Carousel Image */
+.easyslider {
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  max-width: 100%; /* Establece un ancho máximo */
+  margin: 60px 0 20px;
+}
+
+.image_reel img {
+  float: left;
+  width: 20%; /* Ancho del 20% del contenedor */
+  height: 300px; /* Altura fija */
+  overflow: hidden;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 650px) {
+  /* Otros estilos de la media query ... */
+  .easyslider { 
+    height: 250px; 
+    margin: 0 0 20px; 
+  }
+
+  .image_reel {
+    display: flex;
+    overflow-x: auto; /* Agrega desplazamiento horizontal si las imágenes no caben en el slider */
+  }
+  
+  .image_reel img {
+    height: 250px; 
+    margin-left: -450px;
+    margin-right: 200px;
+  }
+}
+
+.easyslider {
+  width: 100%; /* Ancho del slider al 100% de la pantalla */
+}
+
+.image_reel {
+  display: flex;
+  overflow-x: auto; /* Agrega desplazamiento horizontal si las imágenes no caben en el slider */
+}
+
+.image_reel img {
+  height: 320px; /* Ajusta la altura de las imágenes automáticamente para mantener la proporción */
+}
+
+@media only screen and (max-width: 650px) {
+  .easyslider { 
+    height: 250px; 
+    margin: 0 0 20px; 
+  }
+
+  .image_reel {
+    display: flex;
+  }
+  
+  .image_reel img {
+    width: 3000px; /* Ajusta el ancho de las imágenes automáticamente para mantener la proporción */
+    height: 1550px; /* Ajusta la altura de las imágenes al 100% del contenedor */
+  }
+}
+
+.additional-images-container{
+  margin-left: -20px;
+  margin-right: -10px;
+}
+
+.additional-images-container img{
+  margin-left: 14px;
+  margin-right: 50px;
+  width: 370px;
+}
+
+@media (max-width: 1300px) {
+  .additional-images-container img:nth-child(n+4) {
+    display: none;
+  }
+  .additional-images-container img {
+    margin-left: 14px;
+    margin-right: 0px;
+    width: 350px;
+    height: 390px;
+    margin-top: -2px;
+
+  }
+}
+
+@media (max-width: 1024px) {
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  .additional-images-container img {
+    margin-left: 14px;
+    margin-right: 0px;
+    width: 370px;
+    height: 390px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width:960px) {
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  .additional-images-container img {
+    margin-left: 14px;
+    margin-right: 0px;
+    width: 370px;
+    height: 390px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width:790px) {
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  .additional-images-container img {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 340px;
+    height: 390px;
+    margin-top: 9px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .additional-images-container {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+  }
+
+  .additional-images-container img:nth-child(n+2) {
+    display: none;
+  }
+
+  .additional-images-container img {
+    width: 315px; /* Ancho deseado */
+    height: 390px;
+    margin-top: -90px;
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+  }
+}
+
+
+@media (min-width: 960px) {
+  .additional-images-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  .additional-images-container img {
+    margin-left: 54px;
+    margin-right: 0px;
+    width: 330px;
+    height: 390px;
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1299px) {
+  .additional-images-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+
+  .additional-images-container img {
+    width: 340px;
+    height: 390px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+
+  .additional-images-container img {
+    width: 340px;
+    height: 390px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .additional-images-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .additional-images-container img:nth-child(n+4) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    margin-left: 14px;
+    margin-right: 0px;
+    width: 380px;
+    height: 390px;
+    margin-top: -2px;
+  }
+}
+
+@media (max-width: 1280px) and (max-height: 800px) {
+  .additional-images-container img:nth-child(n+4) {
+    display: inline-block; /* Cambia 'none' a 'inline-block' para mostrar las imágenes */
+  }
+  
+  .additional-images-container img {
+    margin-left: 14px;
+    margin-right: 20px; /* Ajusta el espacio horizontal entre las imágenes */
+    width: 380px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 2736px) and (max-height: 1824px) {
+  /* Aquí puedes agregar estilos específicos para el Surface Pro 7 si es necesario */
+  .additional-images-container img:nth-child(n+2) {
+    display: inline-block; /* Cambia 'none' a 'inline-block' para mostrar las imágenes */
+  }
+  
+  .additional-images-container img {
+    margin-left: 14px;
+    margin-right: 20px; /* Ajusta el espacio horizontal entre las imágenes */
+    width: 380px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Agrega tus estilos específicos para iPhone aquí */
+  .additional-images-container {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+  }
+
+  .additional-images-container img:nth-child(n+2) {
+    display: none;
+  }
+
+  .additional-images-container img {
+    width: 315px; /* Ancho deseado */
+    height: 390px;
+    margin-top: -90px;
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+  }
+}
+
+@media (max-width: 540px) {
+  /* Agrega tus estilos específicos para Surface Duo aquí */
+  .additional-images-container {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+  }
+
+  .additional-images-container img:nth-child(n+2) {
+    display: none;
+  }
+
+  .additional-images-container img {
+    width: 315px; /* Ancho deseado */
+    height: 390px;
+    margin-top: -90px;
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .additional-images-container {
+    display: flex;
+    justify-content: space-around; /* Distribuye las imágenes equitativamente */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en filas */
+  }
+
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+
+  .additional-images-container img {
+    width: calc(50% - 20px); /* Calcula el ancho para que dos imágenes se ajusten en una fila con margen entre ellas */
+    height: auto;
+    margin: 10px; /* Margen entre las imágenes */
+  }
+}
+
+@media (max-width: 1024px) and (max-height: 600px) {
+  /* Estilos específicos para Nest Hub y Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -14px;
+    margin-right: 20px;
+    width: 400px;
+    height: 400px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 1280px) and (max-height: 800px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: 8px;
+    margin-right: 20px;
+    width: 198px;
+    height: 230px;
+    margin-top: 3px;
+  }
+
+}
+
+@media only screen 
+  and (max-device-width: 1280px) 
+  and (max-device-height: 800px) 
+  and (-webkit-device-pixel-ratio: 2) {
+  /* Estilos específicos para Hub */
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: 8px;
+    margin-right: 20px;
+    width: 450px;
+    height: 390px;
+    margin-top: -3px;
+  }
+
+}
+
+
+@media only screen 
+  and (max-device-width: 1024px) 
+  and (max-device-height: 600px) 
+  and (-webkit-device-pixel-ratio: 2) {
+  /* Estilos específicos para iPhones */
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -14px;
+    margin-right: 20px;
+    width: 450px;
+    height: 390px;
+    margin-top: 4px;
+  }
+}
+
+@media only screen 
+  and (max-device-width: 414px) 
+  and (max-device-height: 896px) 
+  and (-webkit-device-pixel-ratio: 2) {
+  /* Estilos específicos para iPhones */
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -11px;
+    margin-right: 0;
+    width: 350px;
+    height: 390px;
+    margin-top: -95px;
+  }
+}
+
+@media only screen 
+  and (max-device-width: 360px) /* Ancho máximo del Samsung Galaxy S8+ */
+  and (max-device-height: 740px) /* Altura máxima del Samsung Galaxy S8+ */
+  and (-webkit-device-pixel-ratio: 4) /* Densidad de píxeles del Samsung Galaxy S8+ */
+  and (orientation: portrait) {
+  /* Estilos específicos para Samsung Galaxy S8+ en orientación vertical */
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -11px;
+    margin-right: 0;
+    width: 330px;
+    height: 390px;
+    margin-top: -95px;
+  }
+}
+
+@media only screen 
+  and (device-width: 768px) /* Ancho del iPad Mini */
+  and (device-height: 1024px) /* Altura del iPad Mini */
+  and (-webkit-device-pixel-ratio: 2) /* Densidad de píxeles del iPad Mini */ {
+  /* Estilos específicos para el iPad Mini */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -5px;
+    margin-right: 10px;
+    width: 320px;
+    height: 390px;
+    margin-top: 5px;
+  }
+}
+
+@media only screen 
+  and (device-width: 820px) /* Ancho específico del iPad Air */
+  and (device-height: 1180px) /* Altura específica del iPad Air */ 
+  and (-webkit-device-pixel-ratio: 2) /* Densidad de píxeles del iPad Air */ {
+  
+  /* Estilos específicos para el iPad Air */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -14px;
+    margin-right: 20px;
+    width: 380px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+/* Media query para el iPad Pro */
+@media only screen 
+  and (device-width: 1024px) /* Ancho específico del iPad Pro */
+  and (device-height: 1366px) /* Altura específica del iPad Pro */ 
+  and (-webkit-device-pixel-ratio: 2) /* Densidad de píxeles del iPad Pro */ {
+  
+  /* Estilos específicos para el iPad Pro */
+  .additional-images-container img:nth-child(n+3) {
+    /* Puedes agregar estilos específicos para el iPad Pro aquí */
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario para el iPad Pro */
+    margin-left: -14px;
+    margin-right: 20px;
+    width: 380px;
+    height: 390px;
+    margin-top: 6px;
+    /* Agrega otros estilos necesarios para el iPad Pro */
+  }
+}
+
+@media only screen 
+  and (device-width: 912px) /* Ancho específico del iPad Air */
+  and (device-height: 1368px) /* Altura específica del iPad Air */ 
+  and (-webkit-device-pixel-ratio: 2) /* Densidad de píxeles del iPad Air */ {
+  
+  /* Estilos específicos para el iPad Air */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: 24px;
+    margin-right: 20px;
+    width: 380px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+@media (min-width: 780px) and (max-height: 800px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+4) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: 68px;
+    margin-right: 10px;
+    width: 300px;
+    height: 390px;
+    margin-top: 3px;
+  }
+
+}
+
+@media (max-width: 779px) and (max-height: 520px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -8px;
+    margin-right: 20px;
+    width: 350px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 520px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 20px;
+    width: 320px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+
+@media only screen and (min-width: 769px) and (max-width: 970px) {
+
+  .texto-container{
+    margin-left: -190px;
+  }
+  .social-icon {
+    font-size: 2.5em; /* Ajusta el tamaño de los iconos para pantallas medianas */
+    margin-right: 115px; /* Ajusta el margen entre los iconos para pantallas medianas */
+    margin-left: -110px;
+    margin-bottom: -20px; /* Ajusta el margen inferior entre los iconos para pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) and (max-height: 520px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 20px;
+    width: 320px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 749px) and (max-height: 520px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 10px;
+    width: 320px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 729px) and (max-height: 520px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 5px;
+    width: 320px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 719px) and (max-height: 520px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 5px;
+    width: 310px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 699px) and (max-height: 520px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 5px;
+    width: 300px;
+    height: 390px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 641px) and (max-height: 480px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 5px;
+    width: 210px;
+    height: 390px;
+    margin-top: -93px;
+  }
+}
+
+@media (max-width: 638px) and (max-height: 480px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 5px;
+    width: 210px;
+    height: 390px;
+    margin-top: -93px;
+  }
+}
+
+
+
+@media (max-width: 541px) and (max-height: 480px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 5px;
+    width: 230px;
+    height: 390px;
+    margin-top: -93px;
+  }
+}
+
+@media (max-width: 415px) and (max-height: 768px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 5px;
+    width: 230px;
+    height: 390px;
+    margin-top: -93px;
+  }
+}
+
+@media (max-width: 498px) and (max-height: 600px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 5px;
+    width: 230px;
+    height: 390px;
+    margin-top: -93px;
+  }
+}
+
+@media (max-width: 650px) and (max-height: 600px) {
+  /* Estilos específicos para Nest Hub Max */
+  .additional-images-container img:nth-child(n+3) {
+    display: none;
+  }
+  
+  .additional-images-container img {
+    /* Ajusta los estilos según sea necesario */
+    margin-left: -1px;
+    margin-right: 5px;
+    width: 230px;
+    height: 390px;
+    margin-top: -93px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+
+  .texto-container{
+    margin-left: -10px;
+  }
+  .social-icon {
+    font-size: 2.5em; /* Ajusta el tamaño de los iconos para pantallas medianas */
+    margin-right: 105px; /* Ajusta el margen entre los iconos para pantallas medianas */
+    margin-left: -80px;
+    margin-bottom: 180px; /* Ajusta el margen inferior entre los iconos para pantallas medianas */
+  }
+}
+
+.image_reel {
+  width: 100%; /* Ancho completo del contenedor */
+  height: 300px; /* Altura fija del contenedor del banner */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor */
+}
+
+.image_reel img {
+  width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
+  height: auto; /* Permite que la altura de las imágenes se ajuste automáticamente */
+}
+
+/* Imagen 1 - tamaño */
+
+@media only screen and (max-width: 480px) {
+
+  .image_reel img.prime {
+    /* Estilos específicos para la imagen con la clase "prime" dentro de image_reel */
+    width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
+    height: auto;
+    margin-left: -550px;
+  }
+
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px)  {
+
+  .image_reel img.prime {
+    /* Estilos específicos para la imagen con la clase "prime" dentro de image_reel */
+    width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
+    height: auto;
+    margin-left: -570px;
+  }
+
+}
+
+@media only screen and (device-width: 360px) and (device-height: 740px)  {
+
+  .image_reel img.prime {
+    /* Estilos específicos para la imagen con la clase "prime" dentro de image_reel */
+    width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
+    height: auto;
+    margin-left: -580px;
+  }
+
+}
+
+@media only screen and (device-width: 768px) and (device-height: 1024px)  {
+
+  .image_reel img.prime {
+    /* Estilos específicos para la imagen con la clase "prime" dentro de image_reel */
+    width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
+    height: auto;
+    margin-left: -280px;
+  }
+
+}
+
+@media only screen and (device-width: 820px) and (device-height: 1180px)  {
+
+  .image_reel img.prime {
+    /* Estilos específicos para la imagen con la clase "prime" dentro de image_reel */
+    width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
+    height: auto;
+    margin-left: -200px;
+  }
+
+}
+
+@media only screen and (device-width: 1024px) and (device-height: 1366px)  {
+
+  .image_reel img.prime {
+    /* Estilos específicos para la imagen con la clase "prime" dentro de image_reel */
+    width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
+    height: auto;
+    margin-left: -100px;
+  }
+
+}
+
+@media only screen and (device-width: 912px) and (device-height: 1368px)  {
+
+  .image_reel img.prime {
+    /* Estilos específicos para la imagen con la clase "prime" dentro de image_reel */
+    width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
+    height: auto;
+    margin-left: -200px;
+  }
+
+}
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Papelería Manzanillo</title>
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+  <!-- Titulo de mi Proyecto -->
+  <head>
+  <title>Papelería Manzanillo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' type='text/javascript'></script>
+  </head>
+
+  <body>
+    <!-- Nav bar - logo e iconos-->
+    <div class='nav'>
+      <a class='n-a-1' href='index.html'><img src='../imagenes/logomanza1.png' height='50' title='Papelería Manzanillo'/></a>
+      <a class='n-a-2' href='Sucursales.html' onclick='mySnackbar()'><i class="bi bi-geo"></i> <span>Sucursales</span></a>
+      <a class='n-a-3' href='Articulos.html' onclick='mySnackbar()'><i class="bi bi-bag"></i> <span>Articulos</span></a>
+      <a class='n-a-5' href='Descuentos.html' onclick='mySnackbar()'><i class="bi bi-percent"></i> <span>Descuentos</span></a>
+      <a class='n-a-6' href='Nosotros.html' onclick='mySnackbar()'><i class="bi bi-person"></i> <span>Sobre Nosotros</span></a>
+    </div>
+
+  <!-- Barra Buscador
+    <div 
+      class='search'>Buscar Productos..
+    </div>
+  -->
+
+  <!-- Body -->
+    <div class="sucursales-container">
+      
+      <!-- Sucursal 1 -->
+      <div class="sucursal">
+
+          <div class="banner" id="banner1">
+              <img class="banner-img" src="../imagenes/s8.jpg" alt="Sucursal 1 - Imagen 1">
+              <img class="banner-img" src="../imagenes/s15.jpg" alt="Sucursal 1 - Imagen 2">
+              <img class="banner-img" src="../imagenes/s9.jpg" alt="Sucursal 1 - Imagen 3">
+              <img class="banner-img" src="../imagenes/s14.jpg" alt="Sucursal 1 - Imagen 4">
+          </div>
+        <h3>Sucursal 1</h3>
+        <h1>-----------------------</h1>
+        <h2>Ubicacion:</h2>    
+        <p>C. Francisco I. Madero #200, Centro, 28000 Colima, Col.</p>
+        <br>
+        <h2>Horario:</h2>   
+        <p>Lunes a Sabado: 9:00 am a 8:00 pm</p> 
+        <p>Domingo: 10:00 am a 2:00 pm</p> 
+        <br>
+        <h2>Telefono:</h2>   
+        <p>312-242-4192</p> 
+        <button onclick="verMapa('https://maps.app.goo.gl/uhG4mhQd9iJH5cjx7')">Ver Mapa</button>
+      </div>
+    
+      <!-- Sucursal 2 -->
+      <div class="sucursal">
+          <div class="banner" id="banner2">
+              <img class="banner-img" src="../imagenes/s24.jpg" alt="Sucursal 2 - Imagen 1">
+              <img class="banner-img" src="../imagenes/s20.jpg" alt="Sucursal 2 - Imagen 2">
+              <img class="banner-img"  src="../imagenes/s23.jpg" alt="Sucursal 2 - Imagen 3">
+          </div>
+        <h3>Sucursal 2</h3>
+        <h1>-----------------------</h1>
+        <h2>Ubicacion:</h2>    
+        <p> Mariano Pérez 87, fracc. Las palomas, 28980 Cdad. de Villa de Álvarez, Col.</p>
+        <br>
+        <h2>Horario:</h2>   
+        <p>Lunes a Viernes: 9:00 am a 8:00 pm</p> 
+        <p>Sabado: 9:00 am a 5:00 pm</p> 
+        <br>
+        <h2>Telefono:</h2>   
+        <p>312-242-4192</p> 
+        <button onclick="verMapa('https://maps.app.goo.gl/xqvY4e2zZy5eDdiK9')">Ver Mapa</button>
+      </div>
+
+    </div>
+
+
+  <!-- Footer -->
+  <section id="contacto" class="contact">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <div class="contact-content">
+        <!-- Contenedor de la imagen -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="../imagenes/ES.png" alt="Logo" class="logo"> 
+            </a>
+        </div>
+        <br>
+        <!-- Contenedor del texto -->
+        <div class="texto-container">
+            <a href="Factura.html" class="solicitar-factura">Solicitar Factura</a>
+        </div>
+        <br>
+        <br>
+    
+        <!-- Contenedor de los iconos de redes sociales -->
+        <div class="social-icons-container">
+            <!-- Enlace de Facebook -->
+            <a href="https://www.facebook.com/PapeleriaManzanillo?locale=es_LA" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <i class="bi bi-facebook"></i>
+            </a>
+            
+            <!-- Enlace de Instagram -->
+            <a href="https://www.instagram.com/papeleriamanzanillo/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <i class="bi bi-instagram"></i>
+            </a>
+    
+            <!-- Enlace de WhatsApp -->
+            <a href="https://wa.me/3122014051" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+      <p>©2024 Papelería Manzanillo - WebPapel: Eficiencia Digital</p>
+    </div>
+  </section>
+
+</body>
+
+<!-- partiale -->
+<script  src="./script.js"></script>
+
+<!-- Para el mapa -->
+<script>
+function verMapa(url) {
+  window.location.href = url;
+}
+</script>
+
+<!-- Para animacion sucursales -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      mostrarBannerInmediato();
+      iniciarAnimacionBanner('banner1');
+      iniciarAnimacionBanner('banner2');
+  });
+
+  function mostrarBannerInmediato() {
+      // Obtiene los elementos del banner y los hace visibles
+      const banner1 = document.getElementById('banner1');
+      const imagenes1 = banner1.getElementsByTagName('img');
+      imagenes1[0].style.display = 'block'; // Muestra la primera imagen
+
+      const banner2 = document.getElementById('banner2');
+      const imagenes2 = banner2.getElementsByTagName('img');
+      imagenes2[0].style.display = 'block'; // Muestra la primera imagen
+  }
+
+  function iniciarAnimacionBanner(elementId) {
+      // El código de iniciarAnimacionBanner permanece sin cambios
+      const banner = document.getElementById(elementId);
+      const imagenes = banner.getElementsByTagName('img');
+      let indice = 0;
+
+      setInterval(function() {
+          imagenes[indice].style.display = 'none';
+          indice = (indice + 1) % imagenes.length;
+          imagenes[indice].style.display = 'block';
+      }, 2500); // Cambia la imagen cada 3 segundos, puedes ajustar según sea necesario
+  }
+</script>
+
+</body>
+</html>
