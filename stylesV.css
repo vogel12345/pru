@@ -20,7 +20,7 @@ a {text-decoration: none; color: #ee4d2d;}
     max-width: 25%; /* Establece el ancho máximo para evitar que los íconos se estiren demasiado */
   }
   .nav a .bi {
-    font-size: large; /* Reduce el tamaño de los íconos */
+    font-size: x-large; /* Reduce el tamaño de los íconos */
   }
 }
 
