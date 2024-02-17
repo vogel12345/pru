@@ -1222,7 +1222,8 @@ margin-bottom: 50px; /* Agregado margen inferior para separar de la imagen de ab
   height: auto; /* Permite que la altura de las imágenes se ajuste automáticamente */
 }
 
-/* Imagen 1 - tamaño */
+
+/* Tamaños para iamgenes banner movibles Imagen 1 - tamaño */
 
 @media only screen and (max-width: 480px) {
 
@@ -1230,7 +1231,6 @@ margin-bottom: 50px; /* Agregado margen inferior para separar de la imagen de ab
     /* Estilos específicos para la imagen con la clase "prime" dentro de image_reel */
     width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
     height: auto;
-    margin-left: -550px;
   }
 
 }
@@ -1252,7 +1252,6 @@ margin-bottom: 50px; /* Agregado margen inferior para separar de la imagen de ab
     /* Estilos específicos para la imagen con la clase "prime" dentro de image_reel */
     width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
     height: auto;
-    margin-left: -580px;
   }
 
 }
@@ -1300,4 +1299,22 @@ margin-bottom: 50px; /* Agregado margen inferior para separar de la imagen de ab
   }
 
 }
+
+/* Animacion para moverse las 3 imagenes*/
+.image-wrapper {
+  display: flex;
+  animation: moveImages 12s linear infinite;
+  animation: moveImages 1s reverse;
+}
+
+@keyframes moveImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200% + 116vw)); /* Ajuste para que la animación se detenga en el borde derecho de la pantalla */
+  }
+}
+
+
 
